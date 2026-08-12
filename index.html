@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Lead Intelligence</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/styles.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==========================================
+         SIDEBAR
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                AI
+            </div>
+
+            <div>
+                <h2>LeadIQ</h2>
+                <span>Intelligence Platform</span>
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <button
+                class="nav-item active"
+                data-section="dashboard"
+            >
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="search"
+            >
+                <span>⌕</span>
+                Lead Search
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="saved"
+            >
+                <span>♡</span>
+                Saved Leads
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="analytics"
+            >
+                <span>◫</span>
+                Analytics
+            </button>
+
+            <button
+                class="nav-item"
+                data-section="github"
+            >
+                <span>◉</span>
+                GitHub Analyzer
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="ai-status">
+
+                <div class="status-dot"></div>
+
+                <div>
+                    <strong>AI Engine</strong>
+                    <small>Ready</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ==========================================
+         MAIN APPLICATION
+    =========================================== -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <div class="breadcrumb">
+                    Workspace / Intelligence
+                </div>
+
+                <h1 id="pageTitle">
+                    Lead Intelligence
+                </h1>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    class="icon-button"
+                    id="refreshButton"
+                    title="Refresh"
+                >
+                    ↻
+                </button>
+
+                <div class="profile">
+
+                    <div class="profile-avatar">
+                        VR
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Workspace</strong>
+                        <span>Developer</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ======================================
+             DASHBOARD
+        ======================================= -->
+
+        <section
+            id="dashboard"
+            class="page-section active-section"
+        >
+
+            <div class="hero">
+
+                <div>
+
+                    <div class="eyebrow">
+                        AI-POWERED PROSPECTING
+                    </div>
+
+                    <h2>
+                        Find the right people.
+                        <br>
+                        <span>Start better conversations.</span>
+                    </h2>
+
+                    <p>
+                        Search your lead dataset, score prospects,
+                        analyze profiles and generate personalized
+                        outreach using AI.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-orb">
+
+                    <div class="orb-inner">
+                        AI
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Total Leads
+                    </span>
+
+                    <strong
+                        class="stat-value"
+                        id="totalLeads"
+                    >
+                        12
+                    </strong>
+
+                    <span class="stat-change positive">
+                        Dataset ready
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        High Match
+                    </span>
+
+                    <strong
+                        class="stat-value"
+                        id="highMatch"
+                    >
+                        0
+                    </strong>
+
+                    <span class="stat-change">
+                        80+ score
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        Industries
+                    </span>
+
+                    <strong
+                        class="stat-value"
+                        id="industryCount"
+                    >
+                        0
+                    </strong>
+
+                    <span class="stat-change">
+                        Across dataset
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-label">
+                        AI Engine
+                    </span>
+
+                    <strong class="stat-value">
+                        Ready
+                    </strong>
+
+                    <span class="stat-change positive">
+                        ● Online
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK SEARCH -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            QUICK SEARCH
+                        </span>
+
+                        <h3>
+                            Find your ideal prospects
+                        </h3>
+
+                    </div>
+
+                    <button
+                        class="text-button"
+                        data-section-target="search"
+                    >
+                        Advanced Search →
+                    </button>
+
+                </div>
+
+
+                <div class="quick-search">
+
+                    <input
+                        id="quickTitle"
+                        type="text"
+                        placeholder="Job title e.g. Frontend Engineer"
+                    >
+
+                    <input
+                        id="quickCompany"
+                        type="text"
+                        placeholder="Company e.g. Microsoft"
+                    >
+
+                    <input
+                        id="quickLocation"
+                        type="text"
+                        placeholder="Location e.g. Seattle"
+                    >
+
+                    <button
+                        class="primary-button"
+                        id="quickSearchButton"
+                    >
+                        Search Leads
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECENT LEADS -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            TOP MATCHES
+                        </span>
+
+                        <h3>
+                            Recommended prospects
+                        </h3>
+
+                    </div>
+
+                    <button
+                        class="text-button"
+                        data-section-target="search"
+                    >
+                        View all →
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="lead-grid"
+                    id="dashboardLeads"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SEARCH
+        ======================================= -->
+
+        <section
+            id="search"
+            class="page-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        LEAD DISCOVERY
+                    </span>
+
+                    <h2>
+                        Advanced Lead Search
+                    </h2>
+
+                    <p>
+                        Combine multiple signals to discover
+                        relevant prospects.
+                    </p>
+
+                </div>
+
+                <button
+                    class="secondary-button"
+                    id="exportButton"
+                >
+                    Export CSV
+                </button>
+
+            </div>
+
+
+            <div class="search-panel">
+
+                <div class="field">
+
+                    <label>
+                        Job Title
+                    </label>
+
+                    <input
+                        id="searchTitle"
+                        placeholder="Frontend Engineer"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Company
+                    </label>
+
+                    <input
+                        id="searchCompany"
+                        placeholder="Microsoft"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Location
+                    </label>
+
+                    <input
+                        id="searchLocation"
+                        placeholder="Seattle"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Industry
+                    </label>
+
+                    <select id="searchIndustry">
+
+                        <option value="">
+                            Any industry
+                        </option>
+
+                        <option>
+                            Technology
+                        </option>
+
+                        <option>
+                            SaaS
+                        </option>
+
+                        <option>
+                            AI
+                        </option>
+
+                        <option>
+                            Fintech
+                        </option>
+
+                        <option>
+                            E-commerce
+                        </option>
+
+                        <option>
+                            Media
+                        </option>
+
+                        <option>
+                            Mobility
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Experience
+                    </label>
+
+                    <select id="searchExperience">
+
+                        <option value="">
+                            Any level
+                        </option>
+
+                        <option>
+                            Mid
+                        </option>
+
+                        <option>
+                            Senior
+                        </option>
+
+                        <option>
+                            Lead
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Keywords
+                    </label>
+
+                    <input
+                        id="searchKeywords"
+                        placeholder="React, TypeScript"
+                    >
+
+                </div>
+
+
+                <button
+                    class="primary-button search-submit"
+                    id="searchButton"
+                >
+                    ✦ Find Prospects
+                </button>
+
+            </div>
+
+
+            <div class="results-toolbar">
+
+                <div>
+
+                    <strong id="resultCount">
+                        0
+                    </strong>
+
+                    prospects found
+
+                </div>
+
+                <select id="sortResults">
+
+                    <option value="score">
+                        Highest AI score
+                    </option>
+
+                    <option value="name">
+                        Name
+                    </option>
+
+                    <option value="company">
+                        Company
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                class="lead-grid"
+                id="searchResults"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             SAVED LEADS
+        ======================================= -->
+
+        <section
+            id="saved"
+            class="page-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        YOUR PIPELINE
+                    </span>
+
+                    <h2>
+                        Saved Leads
+                    </h2>
+
+                    <p>
+                        Prospects you have saved for later.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="lead-grid"
+                id="savedResults"
+            >
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             ANALYTICS
+        ======================================= -->
+
+        <section
+            id="analytics"
+            class="page-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        INTELLIGENCE
+                    </span>
+
+                    <h2>
+                        Analytics
+                    </h2>
+
+                    <p>
+                        Understand the quality of your
+                        prospect dataset.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="analytics-grid">
+
+                <div class="analytics-card">
+
+                    <span>
+                        Average Match Score
+                    </span>
+
+                    <strong id="averageScore">
+                        0
+                    </strong>
+
+                    <div class="progress">
+
+                        <div
+                            id="averageProgress"
+                            class="progress-fill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="analytics-card">
+
+                    <span>
+                        Senior / Lead Prospects
+                    </span>
+
+                    <strong id="seniorCount">
+                        0
+                    </strong>
+
+                    <div class="progress">
+
+                        <div
+                            id="seniorProgress"
+                            class="progress-fill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="analytics-card">
+
+                    <span>
+                        Technology Prospects
+                    </span>
+
+                    <strong id="techCount">
+                        0
+                    </strong>
+
+                    <div class="progress">
+
+                        <div
+                            id="techProgress"
+                            class="progress-fill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            DATASET
+                        </span>
+
+                        <h3>
+                            Industry Distribution
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="industryChart"
+                    class="industry-chart"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             GITHUB ANALYZER
+        ======================================= -->
+
+        <section
+            id="github"
+            class="page-section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        DEVELOPER INTELLIGENCE
+                    </span>
+
+                    <h2>
+                        GitHub Analyzer
+                    </h2>
+
+                    <p>
+                        Analyze public GitHub activity
+                        through the GitHub API.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="github-search">
+
+                <input
+                    id="githubUsername"
+                    placeholder="GitHub username e.g. torvalds"
+                >
+
+                <button
+                    class="primary-button"
+                    id="githubButton"
+                >
+                    Analyze Profile
+                </button>
+
+            </div>
+
+
+            <div
+                id="githubResult"
+                class="github-result"
+            >
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         LEAD MODAL
+    =========================================== -->
+
+    <div
+        id="leadModal"
+        class="modal"
+    >
+
+        <div class="modal-backdrop"></div>
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                id="closeModal"
+            >
+                ×
+            </button>
+
+            <div id="modalBody">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         TOAST
+    =========================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+    >
+        <span id="toastMessage">
+            Done
+        </span>
+    </div>
+
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
